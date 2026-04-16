@@ -1,0 +1,680 @@
+/* Custom Styles for Fenix Clone */
+
+.wrapper {
+    min-height: 100vh !important;
+    height: auto !important; /* Garante que o wrapper cresça com o conteúdo e o rodapé não suba */
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    position: relative !important; /* Mudado de fixed para relative para não cobrir conteúdo */
+    z-index: 100;
+}
+
+@media (min-width: 768px) {
+    .main-footer-container {
+        margin-top: 0 !important; /* Remove o espaço extra no desktop já que o header não é mais fixo */
+    }
+}
+
+.btn-donate-header {
+    background-color: var(--white);
+    color: var(--red-text);
+    padding: 8px 20px;
+    border-radius: 5px;
+    font-family: var(--h1-font);
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-left: 15px;
+    border: 2px solid transparent;
+}
+
+.btn-donate-header:hover {
+    background-color: var(--red-text);
+    color: var(--white);
+    border-color: var(--white);
+}
+
+/* Modal or Quick Donation Section style */
+.quick-donation-section {
+    background-color: var(--white);
+    padding: 4rem 1rem;
+    text-align: center;
+    border-top: 5px solid var(--red);
+}
+
+.donation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.donation-card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    border: 1px solid var(--gray);
+}
+
+.donation-card:hover {
+    transform: translateY(-10px);
+}
+
+.pix-box {
+    background: var(--gray);
+    padding: 1rem;
+    border-radius: 10px;
+    margin: 1rem 0;
+    font-weight: bold;
+    color: var(--red-text);
+    font-size: 1.2rem;
+    cursor: pointer;
+    position: relative;
+}
+
+.pix-box::after {
+    content: 'Clique para copiar';
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.7rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.pix-box:hover::after {
+    opacity: 1;
+}
+
+.donation-card i {
+    font-size: 3rem;
+    color: var(--red);
+    margin-bottom: 1rem;
+}
+
+/* Pix QR Code & Copy Button Styles */
+.pix-qr-wrapper {
+    background: #fff;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    margin: 1.5rem auto;
+    width: fit-content;
+    border: 1px solid #eee;
+}
+
+.pix-qr-img {
+    width: 200px;
+    height: 200px;
+    display: block;
+    object-fit: contain;
+    margin: 0 auto;
+    border-radius: 8px;
+}
+
+.pix-copy-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 1.5rem;
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #dee2e6;
+    align-items: center;
+}
+
+.pix-key-display {
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 0.8rem;
+    color: #444;
+    word-break: break-all;
+    background: #eee;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+.pix-copy-btn {
+    background: var(--red);
+    color: #fff !important;
+    border: none;
+    padding: 6px 15px;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    width: auto;
+    margin: 0 auto;
+    font-size: 0.8rem;
+    box-shadow: 0 2px 8px rgba(224, 52, 46, 0.2);
+}
+
+.pix-copy-btn i {
+    font-size: 0.8rem !important;
+    color: #fff !important;
+    margin: 0 !important;
+}
+
+.pix-copy-btn:hover {
+    background: var(--shadow-red);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 15px rgba(224, 52, 46, 0.4);
+}
+
+.pix-copy-btn:active {
+    transform: translateY(0);
+}
+
+.copy-feedback {
+    margin-top: 10px;
+    color: #28a745;
+    font-weight: bold;
+    font-size: 0.9rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.copy-feedback.show {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .btn-donate-header {
+        margin: 10px 0;
+        display: block;
+        text-align: center;
+    }
+}
+
+/* New Donation Form Styles */
+.donation-page-hero {
+    background: #ffffff; 
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centralizado verticalmente */
+    padding: 60px 1rem; 
+}
+
+@media (min-width: 768px) {
+    .donation-page-hero {
+        padding-bottom: 100px; /* Reduzido o padding excessivo */
+    }
+}
+
+.center-text {
+    text-align: center;
+    margin-bottom: 1.2rem;
+    display: block;
+    color: #666;
+    line-height: 1.4;
+}
+
+
+
+
+
+
+
+.donation-form-container {
+    background: white;
+    width: 95%;
+    max-width: 430px; /* Aumentado para mobile conforme solicitado */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border: 1px solid #eee;
+    margin: 0 auto;
+}
+
+.donation-form-header {
+    border-bottom: 3px solid #e1e8ed;
+    padding: 1.5rem; /* Increased padding */
+    text-align: center;
+}
+
+.donation-form-header h2 {
+    font-size: 1.5rem;
+    color: #2e2922;
+    margin: 0;
+}
+
+@media (min-width: 768px) {
+    .donation-form-container {
+        max-width: 700px !important; /* Aumentado para suportar os passos maiores (bancos/pix) */
+        width: auto !important;
+        min-width: 330px;
+    }
+    .donation-form-body {
+        max-width: 330px; /* Largura padrão para os passos iniciais */
+        margin: 0 auto;
+    }
+    .donation-form-body {
+        padding: 1.2rem 1.5rem 1.5rem; 
+    }
+    .donation-form-header {
+        padding: 0.8rem; 
+    }
+    .donation-form-header h2 {
+        font-size: 1.1rem; 
+    }
+    .btn-submit-donation {
+        padding: 10px 20px !important;
+        font-size: 0.9rem !important;
+        width: auto !important;
+        margin: 1rem auto !important;
+        display: block !important;
+    }
+    
+    /* Redução de 40% específica para os elementos do Pix no Desktop */
+    .pix-desktop-row {
+        flex-direction: row !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+    }
+    
+    #step-5 {
+        max-width: 550px !important; /* Aumentado apenas para o passo do Pix no Desktop para caber lado a lado */
+    }
+
+    #step-5 .pix-qr-img {
+        width: 110px !important; /* Reduzido de 180px - aproximadamente 40% menor */
+        height: 110px !important;
+    }
+    #step-5 .pix-key-display {
+        font-size: 0.65rem !important; 
+        padding: 5px !important;
+    }
+    #step-5 .pix-copy-btn {
+        padding: 6px 12px !important;
+        font-size: 0.7rem !important;
+    }
+    
+    /* Proporção para o botão Finalizar no Desktop */
+    #step-5 .btn-submit-donation, #step-4 .btn-submit-donation {
+        padding: 10px 20px !important;
+        font-size: 0.85rem !important;
+        width: auto !important;
+        margin: 1rem auto 0 !important;
+    }
+
+    /* Redução de 30% para Depósito Bancário no Desktop */
+    #step-4 {
+        max-width: 680px !important; /* Espaço para os 4 bancos */
+    }
+    #step-4 .bank-list {
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 10px !important;
+        display: grid !important;
+    }
+    #step-4 .bank-item {
+        padding: 5px !important;
+        gap: 2px !important;
+        min-width: 140px; /* Garante que o conteúdo não quebre de forma feia */
+    }
+    #step-4 .bank-icon {
+        font-size: 1.1rem !important;
+    }
+    #step-4 .bank-details {
+        font-size: 0.7rem !important;
+    }
+    #step-4 .bank-details strong {
+        font-size: 0.75rem !important;
+    }
+    #step-4 h3 {
+        font-size: 0.9rem !important;
+        margin-bottom: 1rem !important;
+    }
+
+    /* Redução de 20% adicional para detalhes do banco no Desktop */
+    #step-4-detail .bank-detail-card {
+        padding: 10px !important;
+        margin-bottom: 0.8rem !important;
+    }
+    #step-4-detail .bank-detail-card i {
+        font-size: 1.4rem !important; /* Reduzido novamente */
+    }
+    #step-4-detail #bank-detail-name {
+        font-size: 0.85rem !important; /* Reduzido novamente */
+    }
+    #step-4-detail #bank-detail-info {
+        font-size: 0.7rem !important; /* Reduzido novamente */
+    }
+}
+
+.donation-form-body p {
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.donation-label-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.donation-label-row label {
+    font-weight: bold;
+    color: #333;
+}
+
+.currency-badge {
+    background: #e1e8ed;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    color: #555;
+    border: 1px solid #ccc;
+}
+
+.donation-presets-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 1.5rem 0;
+}
+
+/* Media query removida pois agora usamos flexbox centrado */
+
+
+.preset-btn {
+    background: white;
+    border: 1px solid #ccc;
+    padding: 15px 10px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 120px; /* Aumentado para acomodar ícones maiores */
+    width: 130px; /* Largura fixa para manter centralizado e simétrico */
+}
+
+.preset-btn i {
+    font-size: 2.2rem; /* Ícones significativamente maiores */
+    color: var(--red);
+    margin-bottom: 5px;
+}
+
+.preset-btn:hover {
+    border-color: var(--red);
+    color: var(--red);
+}
+
+.preset-btn.active {
+    background: var(--red);
+    color: white;
+    border-color: var(--red);
+}
+
+.preset-btn.active i {
+    color: white;
+}
+
+/* Aumentando elementos no Mobile conforme solicitado */
+@media (max-width: 767px) {
+    .donation-form-header h2 {
+        font-size: 1.6rem !important;
+    }
+    .donation-form-body p.center-text {
+        font-size: 1.1rem !important;
+        margin-bottom: 2rem !important;
+    }
+    .preset-btn {
+        width: 145px !important;
+        min-height: 140px !important;
+        font-size: 1.1rem !important;
+    }
+    .preset-btn i {
+        font-size: 2.8rem !important;
+    }
+
+    /* Aumentando elementos do Pix no Mobile conforme solicitado */
+    #step-5 h3 {
+        font-size: 1.3rem !important;
+    }
+    #step-5 .pix-qr-img {
+        width: 220px !important; /* Aumentado de 180px */
+        height: 220px !important;
+    }
+    #step-5 .pix-key-display {
+        font-size: 0.9rem !important;
+        padding: 12px !important;
+    }
+    #step-5 .pix-copy-btn {
+        padding: 12px 20px !important;
+        font-size: 1rem !important;
+    }
+}
+
+.custom-amount-input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 1rem; /* Reduced from 1.5rem */
+    font-size: 1rem;
+    color: #333;
+    transition: border-color 0.3s;
+}
+
+.custom-amount-input:focus {
+    outline: none;
+    border-color: var(--red);
+    box-shadow: 0 0 5px rgba(224, 52, 46, 0.2);
+}
+
+.btn-submit-donation {
+    width: 100%;
+    background: var(--red);
+    color: white;
+    padding: 18px;
+    border-radius: 5px;
+    font-family: var(--h1-font);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(224, 52, 46, 0.3);
+}
+
+.btn-submit-donation:hover {
+    background: var(--shadow-red);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(224, 52, 46, 0.4);
+}
+
+.donation-footer-note {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.donation-footer-note i {
+    color: #d32f2f;
+    margin-right: 5px;
+}
+
+/* Bank Info Styles */
+.bank-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px; /* Increased gap for better spacing */
+    margin-bottom: 2rem; /* Clear separation from Finalize button */
+}
+
+@media (min-width: 480px) {
+    .bank-list {
+        grid-template-columns: 1fr 1fr;
+    }
+    /* Centralize last item if it's the only one in its row */
+    .bank-item:last-child:nth-child(odd) {
+        grid-column: 1 / span 2;
+        max-width: 215px;
+        justify-self: center;
+        width: 100%;
+    }
+}
+
+
+.bank-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px; /* Reduced gap */
+    padding: 8px; /* Reduced padding to make it smaller */
+    border-radius: 8px;
+    transition: background 0.2s;
+    text-align: center;
+    border: 1px solid #f0f0f0;
+    background: #fafafa;
+}
+
+
+.bank-item:hover {
+    background: #f5f5f5;
+    border-color: var(--red);
+}
+
+.bank-item i.bank-icon {
+    font-size: 1.5rem;
+    color: var(--red);
+    margin-bottom: 5px;
+}
+
+.bank-details {
+    color: #555;
+    line-height: 1.1; /* Even more compact */
+    font-size: 0.85rem; /* Smaller font */
+}
+
+.bank-details strong {
+    color: #222;
+    font-size: 0.9rem; /* Smaller font */
+    display: block;
+    margin-bottom: 2px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* --- General Responsiveness Fixes --- */
+
+/* Hamburguer Menu Logic for Mobile */
+#hamburguer {
+    display: none;
+    cursor: pointer;
+    font-size: 2rem;
+    color: white;
+    z-index: 2000;
+}
+
+@media (max-width: 768px) {
+    #hamburguer {
+        display: block;
+    }
+    
+    .nav {
+        display: none; /* Fallback if nav-displayed is not used */
+        flex-direction: column;
+        background: var(--red);
+        position: fixed;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    
+    /* Using the existing nav-displayed class from the project */
+    .nav.nav-displayed {
+        display: flex;
+        left: 0;
+    }
+    
+    .nav_item {
+        padding: 15px;
+        font-size: 1.2rem;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .btn-donate-header {
+        margin: 20px 0 0;
+        width: 100%;
+        display: block;
+    }
+}
+
+/* Values Container - Responsive Grid */
+.values-container {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+    gap: 20px !important;
+    padding: 2rem 0 !important;
+}
+
+/* Fix for icons disappearing on mobile (overriding index.0402388a.css) */
+@media only screen and (min-width: 600px) {
+    .values-container img {
+        display: block !important;
+        margin: 0 auto 15px;
+    }
+}
+
+/* Cause Cards Grid Fix */
+.cause-card__container {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+    gap: 20px !important;
+    padding: 2rem 0 !important;
+}
+
+/* Banner Title Responsive Font */
+@media (max-width: 768px) {
+    .h1-banner {
+        font-size: 1.8rem !important;
+        padding: 0 10px;
+        width: 100% !important;
+    }
+    
+    .h1 {
+        font-size: 2rem !important;
+    }
+}
+
+
+

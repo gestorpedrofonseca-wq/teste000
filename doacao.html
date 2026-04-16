@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/contato.1e13ffdb.css">
+    <link rel="stylesheet" href="assets/css/contato.9adb14ba.css">
+    <link rel="stylesheet" href="assets/css/contato.e5e6963a.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.405cd09d.ico">
+    <title>Fênix - Doação</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="logo">
+                <a href="index.html">
+                    <img width="200px" height="auto" class="logo-img" src="assets/img/white-logo.a195d627.png" alt="logo">
+                </a>
+            </div>
+            <label id="hamburguer" for="toggle"><i class="fa-bars fas"></i></label>
+            <nav class="nav">
+                <a href="index.html#instituto" class="nav_item">O Instituto</a>
+                <a href="index.html#causas" class="nav_item">Causas</a>
+                <a href="projetos.html" class="nav_item">Projetos</a>
+                <a href="doacao.html" class="nav_item">Doação</a>
+                <a href="contato.html" class="nav_item">Contato</a>
+                <a href="transparencia.html" class="nav_item">Transparência</a>
+                <a href="doacao.html" class="btn-donate-header">Doar Agora</a>
+            </nav>
+        </header>
+        <div class="main-footer-container">
+            <main class="donation-page-hero">
+                <div class="donation-form-container" data-aos="zoom-in">
+                    <div class="donation-form-header">
+                        <h2 id="donation-header-title">Transforme Vidas com sua Doação</h2>
+                    </div>
+
+
+                        <!-- Step 3: Payment Method -->
+                        <div class="donation-form-body" id="step-3">
+                            <p class="center-text">Escolha o método de sua preferência:</p>
+                            
+                            <div class="donation-presets-grid" id="payment-methods-grid">
+                                <button class="preset-btn" onclick="selectPayment(event, 'pix')">
+                                    <i class="fas fa-qrcode"></i><br>PIX
+                                </button>
+                                <button class="preset-btn" onclick="selectPayment(event, 'deposit')">
+                                    <i class="fas fa-university"></i><br>Depósito
+                                </button>
+                            </div>
+
+                            <button class="btn-submit-donation" id="final-btn" onclick="handleSubmit()" style="margin-top: 1rem;">
+                                Concluir minha Contribuição <i class="fas fa-check"></i>
+                            </button>
+                        </div>
+
+                        <!-- Step 4: Bank Details (Separate step for Deposit) -->
+                        <div class="donation-form-body" id="step-4" style="display: none;">
+                            <h3 style="font-size: 1.1rem; margin-bottom: 1.5rem; color: #333; font-weight: bold; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px; text-align: center;">Dados para Depósito</h3>
+                            <div class="bank-list">
+                                <div class="bank-item" onclick="showBankDetail('Itaú', 'Ag. 4170', 'C/C 98315-8')" style="cursor: pointer;">
+                                    <i class="fas fa-university bank-icon"></i>
+                                    <div class="bank-details">
+                                        <strong>Itaú</strong>
+                                        Ag. 4170<br>
+                                        C/C 98315-8<br>
+                                        <div style="font-size: 0.75rem; margin-top: 5px; line-height: 1.1;">
+                                            <strong>Titular:</strong> CENTRO CULTURAL DE EDUCAÇÃO E DESENVOLVIMENTO DAS COMUNIDADES - FENIX
+                                        </div>
+                                        <div style="font-size: 0.7rem; color: #e0342e; text-decoration: underline; margin-top: 8px; font-weight: bold; text-transform: uppercase;">selecione</div>
+                                    </div>
+                                </div>
+                                <div class="bank-item" onclick="showBankDetail('Sicoob', 'Ag. 3231', 'C/C 92.259-5')" style="cursor: pointer;">
+                                    <i class="fas fa-university bank-icon"></i>
+                                    <div class="bank-details">
+                                        <strong>Sicoob</strong>
+                                        Ag. 3231<br>
+                                        C/C 92.259-5<br>
+                                        <div style="font-size: 0.75rem; margin-top: 5px; line-height: 1.1;">
+                                            <strong>Titular:</strong> CENTRO CULTURAL DE EDUCAÇÃO E DESENVOLVIMENTO DAS COMUNIDADES - FENIX
+                                        </div>
+                                        <div style="font-size: 0.7rem; color: #e0342e; text-decoration: underline; margin-top: 8px; font-weight: bold; text-transform: uppercase;">selecione</div>
+                                    </div>
+                                </div>
+                                <div class="bank-item" onclick="showBankDetail('Mercado Pago', 'Ag. 001', 'Conta 98391296558')" style="cursor: pointer;">
+                                    <i class="fas fa-university bank-icon"></i>
+                                    <div class="bank-details">
+                                        <strong>Mercado Pago</strong>
+                                        Ag. 001<br>
+                                        Conta 98391296558<br>
+                                        <div style="font-size: 0.75rem; margin-top: 5px; line-height: 1.1;">
+                                            <strong>Titular:</strong> CENTRO CULTURAL DE EDUCAÇÃO E DESENVOLVIMENTO DAS COMUNIDADES - FENIX
+                                        </div>
+                                        <div style="font-size: 0.7rem; color: #e0342e; text-decoration: underline; margin-top: 8px; font-weight: bold; text-transform: uppercase;">selecione</div>
+                                    </div>
+                                </div>
+
+                                <div class="bank-item" onclick="showBankDetail('Cora SCFI - 403', 'Ag. 0001', 'Conta 1864405')" style="cursor: pointer;">
+                                    <i class="fas fa-university bank-icon"></i>
+                                    <div class="bank-details">
+                                        <strong>Cora SCFI - 403</strong>
+                                        Ag. 0001<br>
+                                        Conta 1864405<br>
+                                        <div style="font-size: 0.75rem; margin-top: 5px; line-height: 1.1;">
+                                            <strong>Titular:</strong> CENTRO CULTURAL DE EDUCAÇÃO E DESENVOLVIMENTO DAS COMUNIDADES - FENIX
+                                        </div>
+                                        <div style="font-size: 0.7rem; color: #e0342e; text-decoration: underline; margin-top: 8px; font-weight: bold; text-transform: uppercase;">selecione</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <button onclick="toStep3()" style="width: 100%; height: 40px; background: none; border: none; color: #666; cursor: pointer; margin-top: 15px; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 5px; text-decoration: underline;">
+                                 <i class="fas fa-chevron-left"></i> Voltar aos Métodos
+                            </button>
+                        </div>
+
+                        <!-- Step 4 Detail: Single Bank View -->
+                        <div class="donation-form-body" id="step-4-detail" style="display: none;">
+                            <h3 style="font-size: 1.1rem; margin-bottom: 1.5rem; color: #333; font-weight: bold; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px; text-align: center;">Dados para Depósito</h3>
+                            
+                            <div class="bank-detail-card" style="background: #f8f9fa; padding: 20px; border-radius: 10px; border: 1px solid #dee2e6; margin-bottom: 1.5rem; text-align: center;">
+                                <i class="fas fa-university" style="font-size: 2.5rem; color: #e0342e; margin-bottom: 15px;"></i>
+                                <div id="bank-detail-name" style="font-weight: bold; font-size: 1.2rem; margin-bottom: 10px;"></div>
+                                <div id="bank-detail-info" style="font-size: 1rem; color: #333; line-height: 1.6;"></div>
+                                <div style="font-size: 0.85rem; margin-top: 15px; padding-top: 15px; border-top: 1px dashed #ccc; color: #666;">
+                                    <strong>Titular:</strong><br>CENTRO CULTURAL DE EDUCAÇÃO E DESENVOLVIMENTO DAS COMUNIDADES - FENIX
+                                </div>
+                            </div>
+
+                            <button class="btn-submit-donation" onclick="handleSubmit()" style="margin-top: 1rem;">
+                                Já fiz meu depósito <i class="fas fa-check"></i>
+                            </button>
+                            
+                            <button onclick="backToStep4()" style="width: 100%; height: 40px; background: none; border: none; color: #666; cursor: pointer; margin-top: 15px; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 5px; text-decoration: underline;">
+                                 <i class="fas fa-chevron-left"></i> Escolher outro banco
+                            </button>
+                        </div>
+
+                        <!-- Step 5: Pix Details -->
+                        <div class="donation-form-body" id="step-5" style="display: none;">
+                            <h3 style="font-size: 1.1rem; margin-bottom: 1.5rem; color: #333; font-weight: bold; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px; text-align: center;">Doação via PIX</h3>
+                            <p class="center-text">Escaneie o QR Code ou copie o código abaixo:</p>
+                            
+                            <div class="pix-desktop-row" style="display: flex; flex-direction: column; align-items: center; gap: 15px;">
+                                <div class="pix-qr-wrapper" style="margin: 0; border: 1px solid #eee; padding: 10px; border-radius: 10px; width: fit-content; background: #fff;">
+                                    <img src="assets/img/pix-qr.png" alt="Pix QR Code" class="pix-qr-img" style="width: 180px; height: 180px; display: block;">
+                                </div>
+
+                                <div class="pix-copy-container" style="background: #f8f9fa; padding: 15px; border-radius: 10px; border: 1px solid #dee2e6; display: flex; flex-direction: column; align-items: center; gap: 10px; width: 100%;">
+                                    <span class="pix-key-display" style="font-family: monospace; font-size: 0.75rem; word-break: break-all; background: #eee; padding: 10px; border-radius: 5px; width: 100%;">00020126360014BR.GOV.BCB.PIX01140398...63045C55</span>
+                                    <button class="pix-copy-btn" id="copyPixBtn" data-pix="00020126360014BR.GOV.BCB.PIX0114039859080001905204000053039865802BR5915INSTITUTO FENIX6008SALVADOR6226052272E6wJghlLNpRc8LNkhq9x63045C55" style="width: 100%;">
+                                        <i class="fas fa-copy"></i> Copiar Código
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="copyFeedback" class="copy-feedback" style="text-align: center; margin-top: 10px; color: #28a745; font-weight: bold; display: none;">Chave copiada!</div>
+
+                            <button class="btn-submit-donation" onclick="handleSubmit()" style="margin-top: 1.5rem;">
+                                Já fiz o Pix <i class="fas fa-check"></i>
+                            </button>
+                            
+                            <button onclick="toStep3()" style="width: 100%; height: 40px; background: none; border: none; color: #666; cursor: pointer; margin-top: 15px; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 5px; text-decoration: underline;">
+                                 <i class="fas fa-chevron-left"></i> Voltar aos Métodos
+                            </button>
+                        </div>
+
+                        <!-- Step 6: Success Message -->
+                        <div class="donation-form-body" id="step-6" style="display: none; text-align: center;">
+                            <div style="font-size: 5rem; color: #e0342e; margin: 1rem 0 2rem;">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <h2 style="font-size: 1.8rem; color: #333; margin-bottom: 1rem; font-family: var(--h1-font);">Muito Obrigado!</h2>
+                            <p style="color: #666; font-size: 1.1rem; line-height: 1.5; margin-bottom: 2rem;">Sua contribuição é fundamental para continuarmos transformando vidas.</p>
+                            
+                            <a href="index.html" class="btn-submit-donation" style="text-decoration: none; display: inline-flex; width: auto; padding-left: 40px; padding-right: 40px;">
+                                Voltar para o Início
+                            </a>
+                        </div>
+                </div>
+            </main>
+
+            <footer class="footer">
+                <div class="footer__left-box">
+                    <span class="footer__left-box__title">OS FÊNIX</span>
+                    <span class="footer__left-box__subtitle">Centro Cultural de Educação e Desenvolvimento das Comunidades </span>
+                </div>
+                <div class="footer__center-box">
+                    <span class="footer__center-box__cnpj">CNPJ: 03.985.908/0001-90</span>
+                    <address class="footer__center-box__endereco">Rua Encontro das Árvores - Jardim Placaford, Salvador - BA, Brasil</address>
+                </div>
+                <div class="footer__right-box">
+                    <span class="footer__right-box__title">Mapa do site</span>
+                    <ul class="footer__right-box__grid">
+                        <li><a class="footer__right-box__grid__item" href="index.html#instituto">O Instituto</a></li>
+                        <li><a class="footer__right-box__grid__item" href="index.html#causas">Causas</a></li>
+                        <li><a class="footer__right-box__grid__item" href="projetos.html">Projetos</a></li>
+                        <li><a class="footer__right-box__grid__item" href="doacao.html">Doação</a></li>
+                        <li><a class="footer__right-box__grid__item" href="contato.html">Contato</a></li>
+                        <li><a class="footer__right-box__grid__item" href="transparencia.html">Transparência</a></li>
+                    </ul>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/menu.js"></script>
+    <script type="module" src="assets/js/transparencia.48707058.js"></script>
+    <script src="assets/js/transparencia.726e8ca3.js" nomodule="" defer></script>
+    <script>
+        AOS.init();
+
+        let selectedAmount = '25,00 R$';
+        let selectedMethod = '';
+
+        function selectPayment(event, method) {
+            document.querySelectorAll('#step-3 .preset-btn').forEach(b => b.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+            selectedMethod = method;
+            
+            if (method === 'deposit') {
+                setTimeout(() => {
+                    document.getElementById('step-3').style.display = 'none';
+                    document.getElementById('step-4').style.display = 'block';
+                    document.querySelector('.donation-form-header').style.display = 'none'; // Remove cabeçalho
+                }, 200);
+            } else if (method === 'pix') {
+                setTimeout(() => {
+                    document.getElementById('step-3').style.display = 'none';
+                    document.getElementById('step-5').style.display = 'block';
+                    document.querySelector('.donation-form-header').style.display = 'none'; // Remove cabeçalho
+                }, 200);
+            }
+        }
+
+        function toStep3() {
+            document.getElementById('step-3').style.display = 'block';
+            document.getElementById('step-4').style.display = 'none';
+            document.getElementById('step-4-detail').style.display = 'none';
+            document.getElementById('step-5').style.display = 'none';
+            document.querySelector('.donation-form-header').style.display = 'block'; 
+        }
+
+        function showBankDetail(name, ag, cc) {
+            document.getElementById('step-4').style.display = 'none';
+            document.getElementById('step-4-detail').style.display = 'block';
+            document.getElementById('bank-detail-name').innerText = name;
+            document.getElementById('bank-detail-info').innerHTML = ag + '<br>' + cc;
+        }
+
+        function backToStep4() {
+            document.getElementById('step-4-detail').style.display = 'none';
+            document.getElementById('step-4').style.display = 'block';
+        }
+
+        function handleSubmit() {
+            if (!selectedMethod) {
+                alert('Por favor, selecione um método de pagamento.');
+                return;
+            }
+            
+            // Ocultar todos os passos
+            document.getElementById('step-3').style.display = 'none';
+            document.getElementById('step-4').style.display = 'none';
+            document.getElementById('step-4-detail').style.display = 'none';
+            document.getElementById('step-5').style.display = 'none';
+            
+            // Mostrar o passo de agradecimento
+            document.getElementById('step-6').style.display = 'block';
+            document.querySelector('.donation-form-header').style.display = 'none'; 
+        }
+
+        // Lógica de copiar Pix (repetida da index para funcionar aqui)
+        document.addEventListener('click', function(e) {
+            if (e.target && (e.target.id === 'copyPixBtn' || e.target.closest('#copyPixBtn'))) {
+                const btn = e.target.id === 'copyPixBtn' ? e.target : e.target.closest('#copyPixBtn');
+                const pixKey = btn.getAttribute('data-pix');
+                const feedback = document.getElementById('copyFeedback');
+                
+                navigator.clipboard.writeText(pixKey).then(() => {
+                    feedback.style.display = 'block';
+                    setTimeout(() => {
+                        feedback.style.display = 'none';
+                    }, 2000);
+                }).catch(err => {
+                    console.error('Erro ao copiar: ', err);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
