@@ -1,8 +1,8 @@
-/* Custom Styles for Fenix Clone */
+﻿/* Custom Styles for Fenix Clone */
 
 .wrapper {
     min-height: 100vh !important;
-    height: auto !important; /* Garante que o wrapper cresça com o conteúdo e o rodapé não suba */
+    height: auto !important; /* Garante que o wrapper cresÃ§a com o conteÃºdo e o rodapÃ© nÃ£o suba */
 }
 
 .header {
@@ -10,13 +10,13 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 5%;
-    position: relative !important; /* Mudado de fixed para relative para não cobrir conteúdo */
+    position: relative !important; /* Mudado de fixed para relative para nÃ£o cobrir conteÃºdo */
     z-index: 100;
 }
 
 @media (min-width: 768px) {
     .main-footer-container {
-        margin-top: 0 !important; /* Remove o espaço extra no desktop já que o header não é mais fixo */
+        margin-top: 0 !important; /* Remove o espaÃ§o extra no desktop jÃ¡ que o header nÃ£o Ã© mais fixo */
     }
 }
 
@@ -264,7 +264,7 @@
         min-width: 330px;
     }
     .donation-form-body {
-        max-width: 330px; /* Largura padrão para os passos iniciais */
+        max-width: 330px; /* Largura padrÃ£o para os passos iniciais */
         margin: 0 auto;
     }
     .donation-form-body {
@@ -284,7 +284,7 @@
         display: block !important;
     }
     
-    /* Redução de 40% específica para os elementos do Pix no Desktop */
+    /* ReduÃ§Ã£o de 40% especÃ­fica para os elementos do Pix no Desktop */
     .pix-desktop-row {
         flex-direction: row !important;
         justify-content: center !important;
@@ -309,7 +309,7 @@
         font-size: 0.7rem !important;
     }
     
-    /* Proporção para o botão Finalizar no Desktop */
+    /* ProporÃ§Ã£o para o botÃ£o Finalizar no Desktop */
     #step-5 .btn-submit-donation, #step-4 .btn-submit-donation {
         padding: 10px 20px !important;
         font-size: 0.85rem !important;
@@ -317,9 +317,9 @@
         margin: 1rem auto 0 !important;
     }
 
-    /* Redução de 30% para Depósito Bancário no Desktop */
+    /* ReduÃ§Ã£o de 30% para DepÃ³sito BancÃ¡rio no Desktop */
     #step-4 {
-        max-width: 680px !important; /* Espaço para os 4 bancos */
+        max-width: 680px !important; /* EspaÃ§o para os 4 bancos */
     }
     #step-4 .bank-list {
         grid-template-columns: repeat(4, 1fr) !important;
@@ -329,7 +329,7 @@
     #step-4 .bank-item {
         padding: 5px !important;
         gap: 2px !important;
-        min-width: 140px; /* Garante que o conteúdo não quebre de forma feia */
+        min-width: 140px; /* Garante que o conteÃºdo nÃ£o quebre de forma feia */
     }
     #step-4 .bank-icon {
         font-size: 1.1rem !important;
@@ -345,7 +345,7 @@
         margin-bottom: 1rem !important;
     }
 
-    /* Redução de 20% adicional para detalhes do banco no Desktop */
+    /* ReduÃ§Ã£o de 20% adicional para detalhes do banco no Desktop */
     #step-4-detail .bank-detail-card {
         padding: 10px !important;
         margin-bottom: 0.8rem !important;
@@ -412,12 +412,12 @@
     align-items: center;
     justify-content: center;
     gap: 10px;
-    min-height: 120px; /* Aumentado para acomodar ícones maiores */
-    width: 130px; /* Largura fixa para manter centralizado e simétrico */
+    min-height: 120px; /* Aumentado para acomodar Ã­cones maiores */
+    width: 130px; /* Largura fixa para manter centralizado e simÃ©trico */
 }
 
 .preset-btn i {
-    font-size: 2.2rem; /* Ícones significativamente maiores */
+    font-size: 2.2rem; /* Ãcones significativamente maiores */
     color: var(--red);
     margin-bottom: 5px;
 }
@@ -648,10 +648,53 @@
 }
 
 /* Fix for icons disappearing on mobile (overriding index.0402388a.css) */
+.values-container .value-icon {
+    display: block !important;
+    font-size: 3.5rem;
+    color: var(--red);
+    margin: 15px auto;
+    transition: transform 0.3s ease;
+}
+
+.value-card:hover .value-icon {
+    transform: scale(1.1);
+}
+
+/* Social Icons Styling */
+.social-icon {
+    font-size: 2.5rem;
+    margin-right: 15px;
+    transition: all 0.3s ease;
+}
+
+.social-icon.facebook { color: #1877f2; }
+.social-icon.instagram { color: #e4405f; }
+.social-icon.linkedin { color: #0a66c2; }
+
+.contact_social_media_link:hover .social-icon {
+    transform: scale(1.2) rotate(5deg);
+    filter: drop-shadow(0 0 8px rgba(0,0,0,0.2));
+}
+
+.contact_social_media_link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.contact_social_media_link:hover {
+    color: var(--red-text);
+}
 @media only screen and (min-width: 600px) {
     .values-container img {
+        display: none !important;
+    }
+    .values-container .value-icon {
         display: block !important;
-        margin: 0 auto 15px;
     }
 }
 
